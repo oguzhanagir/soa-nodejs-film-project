@@ -17,12 +17,12 @@ const Comment = sequelize.define("comments",{
         type: DataTypes.STRING,
         allowNull: false
     },
-    timeStamp:{
-        type:DataTypes.STRING,
-        allowNull: false,
+    content:{
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    
-
+ 
+ 
 
 });
 

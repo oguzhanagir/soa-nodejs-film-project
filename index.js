@@ -2,21 +2,11 @@ const express = require("express");
 require("dotenv").config();
 
 const app = express();
-const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("./swagger.json");
 
+const AllRoutes = require("./routes/index");
 
-const AllRoutes = require("./routes/routes");
-const sequelize = require("./db/config");
-
-
-
-initCors(app);
 app.use(express.json());
 
-
-//swagger-docs
-app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 
@@ -25,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.use("/api", AllRoutes.addressRouter);
+app.use("/api", AllRoutes.commentRouter);
 
 
 const port = process.env.APP_PORT || 3000;
