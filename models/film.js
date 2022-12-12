@@ -9,10 +9,6 @@ const Film = sequelize.define("films",{
         unique: true,
         primaryKey: true
     },
-    full_name:{
-        type:DataTypes.STRING,
-        allowNull: false,
-    },
     title:{
         type: DataTypes.STRING,
         allowNull: false
