@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("psdb", "root", "",{
+const sequelize = new Sequelize("soaproject", "root", "",{
     dialect: "mysql",
     host: "localhost"
 });

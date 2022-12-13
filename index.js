@@ -1,12 +1,12 @@
 const express = require("express");
 require("dotenv").config();
-
+const sequelize = require("./db/config")
 const app = express();
 
 const AllRoutes = require("./routes/index");
 
 app.use(express.json());
-
+//sequelize.sync({ force: true });
 
 
 
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.use("/api", AllRoutes.commentRouter);
+app.use("/api", AllRoutes.categoryRouter);
 
 
 const port = process.env.APP_PORT || 3000;
