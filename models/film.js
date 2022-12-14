@@ -13,18 +13,16 @@ const Film = sequelize.define("films",{
         type: DataTypes.STRING,
         allowNull: false
     },
-    addressLine:{
+    description:{
         type:DataTypes.STRING,
         allowNull: false,
     },
-    zip_code:{
-        type: DataTypes.INTEGER,
+    path:{
+        type: DataTypes.STRING,
         allowNull: false,
     },
 
 
 });
-
-
 
 module.exports = Film;

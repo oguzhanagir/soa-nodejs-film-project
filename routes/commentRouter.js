@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const commentController = require("../dal/comment/index");
+const commentController = require("../controller/comment/index");
 
-router.get("/comment/:id",commentController.listCommentByFilm);
+router.get("/comment/:id",commentController.getCommentByFilm);
 
 router.post("/comment", commentController.createComment);
 

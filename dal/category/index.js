@@ -1,3 +1,4 @@
 module.exports = {
-    createCategoryDal: require("./createCategoryDal")
+    createCategoryDal: require("./createCategoryDal"),
+    getAllCategoriesDal: require("./getAllCategoriesDal")
 }

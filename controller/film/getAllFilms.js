@@ -1,10 +1,10 @@
-const Film = require("../../models/Film");
+const FilmDal = require("../../dal/film/index");
 
 
 const getAllFilms = async (req, res) => {
 	try {
-		const categories = await Film.findAll();
-		res.status(200).json({ message: "Get All Films", data: categories });
+		const films = await FilmDal.getAllFilms();
+		res.status(200).json({ message: "Get All Films", data: films });
 	} catch (err) {
 		res.status(500).send(err);
 	}

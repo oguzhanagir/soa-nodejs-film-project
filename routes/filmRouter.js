@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const filmController = require("../dal/film/index");
+const filmController = require("../controller/film/index");
 
-router.get("/film/:filmId",filmController.getAllInfoFilm);
+router.get("/film/:id",filmController.getFilmByCategory);
 
-router.get("/film/:id",filmController.getFilmId);
+router.get("/film",filmController.getAllFilms);
 
 router.post("/film", filmController.createFilm);
 

@@ -22,10 +22,6 @@ const Comment = sequelize.define("comments",{
         allowNull: false
     },
  
- 
-
 });
-
-
 
 module.exports = Comment;
