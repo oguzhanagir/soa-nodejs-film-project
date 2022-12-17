@@ -16,6 +16,9 @@ app.get("/", (req, res) => {
 
 
 app.use("/api", AllRoutes.categoryRouter);
+app.use("/api", AllRoutes.authRouter);
+app.use("/api", AllRoutes.commentRouter);
+app.use("/api", AllRoutes.filmRouter);
 
 
 const port = process.env.APP_PORT || 3000;
