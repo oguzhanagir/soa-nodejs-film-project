@@ -1145,6 +1145,7 @@ hr {
     margin-bottom: 20px;
 	background: transparent;
 	border: 1px solid #ddd;
+    color: #000;
 }
 
 .login-signup {
@@ -1172,33 +1173,7 @@ hr {
     display: block;
 }
 
-.login-social {
-    display: flex;
-    justify-content: space-between;
-}
 
-.login-social a i {
-    width: 45px;
-    display: inline-block;
-    height: 45px;
-    font-size: 20px;
-    line-height: 45px;
-    color: #fff;
-    background: #3a559f;
-    text-align: center;
-}
-.login-social a i.icofont-social-twitter {
-    background: #50abf1;
-}
-.login-social a i.icofont-social-linkedin {
-    background: #dd4b39;
-}
-.login-social a i.icofont-social-google-plus {
-    background: #0084b1;
-}
-.login-social a i.icofont-camera {
-    background: #c536a4;
-}
 /*----------------------------------
 -------- blog PAGE CSS START -------
 ------------------------------------*/
