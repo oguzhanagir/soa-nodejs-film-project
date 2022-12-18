@@ -1,18 +1,16 @@
 const Joi = require("joi");
 
 const validationSchema = Joi.object({
-	full_name: Joi.string().trim().required().min(5).max(40),
+	id: Joi.number().trim().required().min(1).max(100),
 	title: Joi.string().trim().required().min(5).max(40),
-	addressLine: Joi.string().trim().required().min(10).max(255),
-	zip_code: Joi.number().trim().required().min(3).max(10),
+	description: Joi.string().trim().required().min(10).max(255),
 });
 
 const filmValidate = async (req, res, next) => {
 	const payload = {
-		firstname_lastname: req.body.full_name,
-		addressLine: req.body.addressLine,
-		zip_code: req.body.zip_code,
+		id:req.body.title,
 		title: req.body.title,
+		description: req.body.description,
 	};
 
 	const { error } = validationSchema.validate(payload);
@@ -24,4 +22,4 @@ const filmValidate = async (req, res, next) => {
 	}
 };
 
-module.exports = addressValidate;
+module.exports = filmValidate;

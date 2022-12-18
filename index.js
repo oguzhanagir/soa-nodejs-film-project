@@ -56,4 +56,7 @@ app.listen(port, async() =>{
 
 
 app.use("/api", AllRoutes.categoryRouter);
+app.use("/api", AllRoutes.authRouter);
+app.use("/api", AllRoutes.commentRouter);
+app.use("/api", AllRoutes.filmRouter);
 
