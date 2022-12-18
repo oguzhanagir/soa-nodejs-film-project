@@ -11,8 +11,4 @@ router.get("/login",pageController.loginPage);
 router.get("/movie-details",pageController.movieDetailPage);
 router.get("/register",pageController.registerPage);
 
-
-
-//router.post("/category", categoryController.createCategory);
-
 module.exports = router;
