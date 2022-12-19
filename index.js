@@ -1,11 +1,13 @@
 const express = require("express");
 require("dotenv").config();
-
-
 const sequelize = require("./db/config")
+const bodyParser = require("body-parser");
 const app = express();
-
 const AllRoutes = require("./routes/index");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}))
+
 const port = process.env.APP_PORT || 3000;
 app.use(express.json());
 //sequelize.sync({ force: true });
@@ -17,6 +19,7 @@ app.set('view engine','ejs');
  app.use('*/js',express.static('assets/js'));
  app.use('*/img',express.static('assets/img'));
  app.use('*/fonts',express.static('assets/fonts'));
+
 
  app.use('/',AllRoutes.pageRouter);
 

@@ -8,7 +8,9 @@ router.get("/top-movies",pageController.topmoviesPage);
 router.get("/blog-details",pageController.blogDetailPage);
 router.get("/blog",pageController.blogPage);
 router.get("/login",pageController.loginPage);
+router.post("/login",pageController.loginForm);
 router.get("/movie-details",pageController.movieDetailPage);
 router.get("/register",pageController.registerPage);
+router.post("/register",pageController.registerForm);
 
 module.exports = router;

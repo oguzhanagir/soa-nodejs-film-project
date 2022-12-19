@@ -1,16 +1,16 @@
 const Joi = require("joi");
 
 const validationSchema = Joi.object({
-	id: Joi.number().trim().required().min(1).max(100),
 	title: Joi.string().trim().required().min(5).max(40),
 	description: Joi.string().trim().required().min(10).max(255),
+	path: Joi.string().trim().required(),
 });
 
 const filmValidate = async (req, res, next) => {
 	const payload = {
-		id:req.body.title,
 		title: req.body.title,
 		description: req.body.description,
+		path: req.body.path
 	};
 
 	const { error } = validationSchema.validate(payload);

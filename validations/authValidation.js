@@ -1,8 +1,6 @@
 const Joi = require("joi");
 
 const validationSchema = Joi.object({
-	full_name: Joi.string().trim().required().min(5).max(40),
-	id: Joi.number().trim().required().min(5).max(40),
 	first_name: Joi.string().trim().required().min(1).max(255),
 	last_name: Joi.number().trim().required().min(2).max(255),
     email: Joi.string().trim().required().min(2).max(40),
@@ -12,8 +10,6 @@ const validationSchema = Joi.object({
 
 const authValidate = async (req, res, next) => {
 	const payload = {
-		full_name: req.body.full_name,
-        id: req.body.id,
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,
 		email: req.body.email,

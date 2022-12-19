@@ -2,21 +2,27 @@ const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 
 
-const login = async (req, res) => {
-	try {
-		//checking if the email is correct
-		const user = await User.findOne({where:{ email: req.body.email }});
-		if (!user) return res.status(400).json("Email or Password is wrong");
 
-		//checking if the password is correct
-		const pass = await bcrypt.compare(req.body.password, user.password);
-		if (!pass) return res.status(400).json("Email or Password is wrong");
-
-		
-		res.status(200).json({ message:"Giriş Başarılı." });
-	} catch (err) {
-		res.status(500).send(err);
+const login = async (res,email,password) => {
+	//checking if the email is correct
+	const user = await User.findOne({where:{ email: email }});
+	//email ve şifre kontrolü eklenecek
+	const pass = await bcrypt.compare(password, user.password);
+	if (user == null)
+	{ 
+		 
+		return "kullanıcı yok" ;
 	}
+	else if (!pass)
+	{
+		return "şifre hatalı"
+	}
+	else{
+		
+		return "başarılı"
+	}
+
+
 };
 
 module.exports = login;
